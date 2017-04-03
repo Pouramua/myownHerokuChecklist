@@ -62,6 +62,10 @@ var port = process.env.PORT || 3000
 
 * From the dashboard, click the 'New' button in the top right corner. Create a name and a region and press 'create app'. Scroll down to the 'deploy using heroku git' section and copy the line that starts 'heroku git:remote -a YOUR_HEROKU_APP'. When you run this line in your terminal, it will add `heroku` as a new remote to your repo, similar to `origin`. Type `git remote -v` to see it.
 
+## Setting up an exsiting App.
+
+`heroku info <appName>` will give you the Git URL and then you wanna run `git remote add heroku {Git Url}` and this will set up your heroku remote the equivalent to `heroku git:remote -a infinite-harbor-71449` 
+
 
 ## Provision and deploy
 
@@ -69,7 +73,7 @@ var port = process.env.PORT || 3000
   - `heroku addons:create heroku-postgresql:hobby-dev`
   - This can also be done on heroku.com from the 'addons' section. Look for 'heroku postgres'.
 
-2. Deploy to Heroku with `git push heroku master`.
+2. Deploy to Heroku with `git push heroku master` or `git push heroku <localBranch>:master` for example `git push heroku dev:master`.
 
 3. Now it's time to seed your database with any data you'd like it to have, so we need to login to the Heroku server. `heroku run bash` will open the terminal for your app hosted on Heroku. You will notice that it will be quite slow!
  - Apply the seed file by running `knex seed:run`.
