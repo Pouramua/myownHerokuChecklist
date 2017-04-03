@@ -64,7 +64,7 @@ var port = process.env.PORT || 3000
 
 ## Setting up an exsiting App.
 
-`heroku info <appName>` will give you the Git URL and then you wanna run `git remote add heroku {Git Url}` and this will set up your heroku remote the equivalent to `heroku git:remote -a infinite-harbor-71449` 
+`heroku info <appName>` will give you the Git URL and then you wanna run `git remote add heroku {Git Url}` and this will set up your heroku remote the equivalent to `heroku git:remote -a <appName>` 
 
 
 ## Provision and deploy
